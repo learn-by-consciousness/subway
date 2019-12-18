@@ -7,3 +7,37 @@
 2. 你的程序应该解决实际问题，并给出正确答案。
 3. 程序输出信息可参照广州地铁线路查询、坐车网（zuoche.com）和百度地图线路规划等给出有关信息，可以自行设计，最低要求给出一种最佳乘车方案。
 4. 我们将择时分组进行讲解演示，并根据完成情况打分。
+
+测试说明：
+### 编译与使用
+
+本程序支持在`windows`环境下编译，如在`linux`环境下请发邮箱给本人以更换源代码(求求你做个人吧)
+
+头文件有`BPlusTree.h`，源文件有`main.cpp`、`test.cpp`和`BPlusTree.cpp`，将它们放在同一目录下，并使用合适的多文件编译器编译。
+
+编译后即可直接运行，无需任何输入。
+
+
+
+### 测试建议
+
+修改头文件中以下值，再编译运行。
+
+```c++
+#define MAX_SIZE	1000
+#define INIT_SIZE	50
+#define SEARCH_CASE	50000
+```
+
+`INIT_SIZE`为初始化树的记录个数，不小于6，`MAX_SIZE`为插入个数，`SEARCH_CASE`为搜索测试次数
+
+README
+请在linux下使用本程序
+通过   "tar -xzvPf Project3.tar.gz"  解包文件，
+得到文件夹Project3
+在Project3中通过"make"获得可执行文件zzip
+通过"./zzip --help"获得帮助信息
+通过"./runtest.sh"可对目录src下的所有文件进行测试
+若要测试其他文件，直接放入src目录下并runtest，但要注意这些文件名中不可有空格
+更具体的帮助信息可阅读实验报告
+出现无法解决的问题请联系zetako@outlook.com或1059397226@qq.com
