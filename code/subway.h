@@ -7,6 +7,9 @@
 #include <list>
 #include <map>
 #include <string>
+#include <queue>
+#include <stack>
+#include <set>
 
 #define inf 66666666
 using namespace std;

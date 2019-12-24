@@ -111,7 +111,7 @@ void subway_system::checkLine(string origin, string destination) {
 			line1 = Stations[station1].first;
 			line2 = Stations[station2].first;
 
-			if(line1 == line2)
+			if (line1 == line2)
 			{
 				count.back()++;
 				{
@@ -122,7 +122,7 @@ void subway_system::checkLine(string origin, string destination) {
 				if (line.empty() || line1 != line.back())
 					line.push_back(line1);
 			}
-			else
+			else if (k != path.size() - 1 && k != 1)
 			{
 				count.push_back(0);
 				reset(station1);

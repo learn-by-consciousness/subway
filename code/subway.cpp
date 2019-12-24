@@ -1,8 +1,5 @@
 #include "subway.h"
-#include <list>
-#include <queue>
-#include <stack>
-using namespace std;
+
 
 struct vertex {
 	size_t dis;
@@ -10,16 +7,9 @@ struct vertex {
 	int path;
 	bool known;
 	bool popped;
+	vertex() :dis(inf), known(false), popped(false) {  }
 };
 
-bool empty(vector<vertex> &nodes) {
-	bool flag = true;
-	for (auto& entry : nodes) {
-		if (entry.popped == false)
-			flag = false;
-	}
-	return flag;
-}
 
 int find(vector<vertex>& nodes) {
 	int res = 0;
@@ -37,36 +27,42 @@ int find(vector<vertex>& nodes) {
 	return res;
 }
 
-vector<int> subway_system::getShortestPath(int a, int b)
+vector<int> subway_system::getShortestPath(int origin, int destination)
 {
 	vector<int> res;
+	set<int> known;
 	//initialize
 	vector<vertex> nodes;
 	nodes.resize(n);
 	for (size_t i = 0; i < nodes.size(); i++) {
-		if (i == a) {
-			nodes[i].dis = 0;
-			nodes[i].known = true;
-		}
-		else {
-			nodes[i].dis = inf;
-			nodes[i].known = false;
-		}
 		nodes[i].id = i;
 		nodes[i].path = i;
 		nodes[i].popped = false;
 	}
-
+	nodes[origin].dis = 0;
+	nodes[origin].known = true;
+	nodes[origin].path = origin;
+	known.insert(origin);
 	//calculating
 	
-	while (!empty(nodes)) {
-		int index = find(nodes);
+	for (int i = 0; i < n; i++) {
+		int index = 0, min_dis = inf;
+		for(auto &entry:known)
+			if (!(nodes[entry].popped) && nodes[entry].dis <min_dis)
+			{
+				min_dis = nodes[entry].dis;
+				index = entry;
+			}
+		if (index == destination)break;
+
 		nodes[index].popped = true;
 		vertex u = nodes[index];
+
 		for (auto& entry : E[u.id]) {
 			if (!nodes[entry.first].known) {
 				if (nodes[entry.first].dis > nodes[u.id].dis + entry.second) {
 					nodes[entry.first].known = true;
+					known.insert(entry.first);
 					nodes[entry.first].dis = nodes[u.id].dis + entry.second;
 					nodes[entry.first].path = u.id;
 				}
@@ -75,13 +71,13 @@ vector<int> subway_system::getShortestPath(int a, int b)
 	}
 	//get path
 	stack<int> temp;
-	int cur = b;
+	int cur = destination;
 	temp.push(cur);
-	while (nodes[cur].path != a) {
-		temp.push(nodes[cur].path);
+	while (nodes[cur].path != origin) {
 		cur = nodes[cur].path;
+		temp.push(cur);
 	}
-	temp.push(a);
+	temp.push(origin);
 	while (!temp.empty()) {
 		res.push_back(temp.top());
 		temp.pop();
