@@ -4,12 +4,11 @@
 int main()
 {
 	subway_system system;
-	Memu memu;
-	while(memu.isChecking())
+	while(Menu::isChecking())
 	{
-		memu.printMemu();
-		string origin = memu.getOrigin();
-		string destination = memu.getDestination();
+		Menu::printMenu();
+		string origin = Menu::getOrigin();
+		string destination = Menu::getDestination();
 		if(system.isStaition(origin) && system.isStaition(destination))
 			system.checkLine(origin, destination);
 	}

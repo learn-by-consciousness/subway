@@ -1,5 +1,5 @@
-#ifndef MEMU_H
-#define MEMU_H
+#ifndef MENU_H
+#define MENU_H
 
 #include <iostream>
 #include <string>
@@ -10,10 +10,10 @@ using namespace std;
 #define LINE_SIZE 30
 inline void clear() {system("cls");}
 
-class Memu
+class Menu
 {
 public:
-    string getLine(int x, int y)
+    static string getLine(int x, int y)
     {
         gotoxy(x, y);
         char s[30] = "", c;
@@ -24,7 +24,7 @@ public:
         return s;
     }
 
-	bool isChecking()
+	static bool isChecking()
 	{
         clear();
         cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%% 广州地铁查询系统 %%%%%%%%%%%%%%%%%%%%%%%%%%%\n"
@@ -33,7 +33,7 @@ public:
         return order[0] == 'y' || order[0] == 'Y';
 	}
 
-	void gotoxy(int x, int y)
+	static void gotoxy(int x, int y)
 	{
 		HANDLE hout;
 		COORD coord;
@@ -43,10 +43,10 @@ public:
 		SetConsoleCursorPosition(hout, coord);
 	}
 
-    string getOrigin() { return getLine(18,2); }
-    string getDestination() { return getLine(18,3); }
+    static string getOrigin() { return getLine(18,2); }
+    static string getDestination() { return getLine(18,3); }
 
-    void printMemu()
+    static void printMenu()
     {
         clear();
         cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%% 广州地铁查询系统 %%%%%%%%%%%%%%%%%%%%%%%%%%%\n"

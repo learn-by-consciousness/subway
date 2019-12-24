@@ -32,16 +32,16 @@ void subway_system::readData(vector<edge>& edges) {
 		for (int i = 0; i < 2; i++)
 		{
 			auto findStation = Stations.find(station[i]);
-			//æŸ¥æ‰¾ä¸åˆ°è¯¥ç«™ç‚¹
+			//²éÕÒ²»µ½¸ÃÕ¾µã
 			if (findStation == Stations.end()) {
 				ID[i] = Stations.size();
 				Stations[station[i]] = pair<string, int>(line, ID[i]);
 				station_name.push_back(station[i]);
 			}
-			//è¯¥ç«™ç‚¹æ˜¯å·²æœ‰çº¿è·¯çš„ç«™ç‚¹
+			//¸ÃÕ¾µãÊÇÒÑÓĞÏßÂ·µÄÕ¾µã
 			else if ((*findStation).second.first == line)
 				ID[i] = Stations[station[i]].second;
-			//è¯¥ç«™ç‚¹ä¸ºæ¢ä¹˜ç«™
+			//¸ÃÕ¾µãÎª»»³ËÕ¾
 			else
 			{
 				char c = '1';
@@ -71,6 +71,10 @@ void subway_system::readData(vector<edge>& edges) {
 	cout << Stations.size() << endl;
 }
 
-string subway_system::checkLine(string oringin, string destination) {
+void subway_system::checkLine(string oringin, string destination) {
+	
+
+
+
 
 }
