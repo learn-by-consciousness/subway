@@ -1,5 +1,5 @@
 #include "subway.h"
-#include "memu.h"
+#include "menu.h"
 
 void subway_system::makeGraph(vector<edge>& edges) {
 	list<pair<int, int>>tmp;
@@ -28,21 +28,21 @@ void subway_system::readData(vector<edge>& edges) {
 
 	while (fin >> line >> station[0] >> station[1] >> distance)
 	{
-		if (line.back() >= '0' && line.back() <= '9')line += "ºÅÏß";
+		if (line.back() >= '0' && line.back() <= '9')line += "å·çº¿";
 
 		for (int i = 0; i < 2; i++)
 		{
 			auto findStation = Stations.find(station[i]);
-			//²éÕÒ²»µ½¸ÃÕ¾µã
+			//æŸ¥æ‰¾ä¸åˆ°è¯¥ç«™ç‚¹
 			if (findStation == Stations.end()) {
 				ID[i] = Stations.size();
 				Stations[station[i]] = pair<string, int>(line, ID[i]);
 				station_name.push_back(station[i]);
 			}
-			//¸ÃÕ¾µãÊÇÒÑÓĞÏßÂ·µÄÕ¾µã
+			//è¯¥ç«™ç‚¹æ˜¯å·²æœ‰çº¿è·¯çš„ç«™ç‚¹
 			else if ((*findStation).second.first == line)
 				ID[i] = Stations[station[i]].second;
-			//¸ÃÕ¾µãÎª»»³ËÕ¾
+			//è¯¥ç«™ç‚¹ä¸ºæ¢ä¹˜ç«™
 			else
 			{
 				char c = '1';
@@ -90,7 +90,7 @@ void subway_system::checkLine(string origin, string destination) {
 	
 	clear();
 	if(src==target)
-		cout << "ÆğµãÕ¾ÓëÖÕµãÕ¾ÏàÍ¬";
+		cout << "èµ·ç‚¹ç«™ä¸ç»ˆç‚¹ç«™ç›¸åŒ";
 	else
 	{
 		vector<string> transfer;
@@ -132,10 +132,10 @@ void subway_system::checkLine(string origin, string destination) {
 		}
 		cout << endl;
 
-		cout << "´Ó" << origin << "³ö·¢£¬×ø" << line[0] << "£¬";
+		cout << "ä»" << origin << "å‡ºå‘ï¼Œå" << line[0] << "ï¼Œ";
 		for (int i = 0; i < transfer.size(); i++)
-			cout << "¾­" << count[i] << "Õ¾µ½´ï" << transfer[i] << "£¬»»³Ë" << line[i + 1] << "£¬";
-		cout << "×îºó¾­" << count.back() << "Õ¾µ½´ï" << destination << "¡£";
+			cout << "ç»" << count[i] << "ç«™åˆ°è¾¾" << transfer[i] << "ï¼Œæ¢ä¹˜" << line[i + 1] << "ï¼Œ";
+		cout << "æœ€åç»" << count.back() << "ç«™åˆ°è¾¾" << destination << "ã€‚";
 
 	}
 	cout << endl;
