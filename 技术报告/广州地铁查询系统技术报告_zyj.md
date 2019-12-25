@@ -86,15 +86,15 @@
 
 1. 南沙客运港到沙园
 
-   ![南沙客运港到沙园](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-沙园.png)
+   <img src = "src/南沙客运港-沙园.png" height = 400>
 
-   ![南沙客运港到沙园官网](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-沙园.官网.png)
+   <img src = "src/南沙客运港-沙园.官网.png">
 
 2. 南沙客运港到飞鹅岭
 
-   ![南沙客运港到飞鹅岭](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-飞鹅岭.png)
+   <img src = "src/南沙客运港-飞鹅岭.png" height = 450>
 
-   ![南沙客运港到飞鹅岭官网](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-飞鹅岭.官网.png)
+   <img src = "src/南沙客运港-飞鹅岭.官网.png">
 
 
 
