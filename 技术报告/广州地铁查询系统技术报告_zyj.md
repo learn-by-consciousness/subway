@@ -82,6 +82,22 @@
 
 
 
+### 已进行的测试
+
+1. 南沙客运港到沙园
+
+   ![南沙客运港到沙园](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-沙园.png)
+
+   ![南沙客运港到沙园官网](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-沙园.官网.png)
+
+2. 南沙客运港到飞鹅岭
+
+   ![南沙客运港到飞鹅岭](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-飞鹅岭.png)
+
+   ![南沙客运港到飞鹅岭官网](https://github.com/learn-by-consciousness/subway/blob/master/技术报告/src/南沙客运港-飞鹅岭.官网.png)
+
+
+
 ## (4)总结和讨论
 
 由之前的实现和测试可总结得，项目的核心算法还是Dijkstra算法求图中某两个节点之间的最短路径。在导入广州地铁的线路信息和乘坐时间的前提下，用该算法对导入的信息进行处理来完成整个项目的实现。由于这个项目本身具有实际的应用意义，所以我和我的伙伴关于该项目和实际应用中的实现的差别进行了讨论，同时探讨了该项目的实际应用价值。
