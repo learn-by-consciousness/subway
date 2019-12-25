@@ -11,22 +11,6 @@ struct vertex {
 };
 
 
-int find(vector<vertex>& nodes) {
-	int res = 0;
-	int min_dis = inf;
-	for (auto& entry : nodes) {
-		if (entry.popped) continue;
-		else
-		{
-			if (entry.dis < min_dis) {
-				min_dis = entry.dis;
-				res = entry.id;
-			}
-		}
-	}
-	return res;
-}
-
 vector<int> subway_system::getShortestPath(int origin, int destination)
 {
 	vector<int> res;
