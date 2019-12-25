@@ -1,5 +1,5 @@
 #include "subway.h"
-#include "memu.h"
+#include "menu.h"
 int main()
 {
 	
@@ -14,7 +14,7 @@ int main()
 		else
 		{
 			clear();
-			cout << "վ�㲻����\n";
+			cout << "Õ¾µã²»´æÔÚ\n";
 			std::system("pause");
 		}
 	}
